@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Inherited Icy Parent POM -->
+    <parent>
+		<artifactId>pom-icy</artifactId>
+        <groupId>org.bioimageanalysis.icy</groupId>
+        <version>3.0.0-a.4</version>
+	</parent>
+
+    <!-- Project Information -->
+    <artifactId>track-processor-flow</artifactId>
+    <version>2.0.0-a.1</version>
+
+    <name>Track Processor Flow</name>
+    <inceptionYear>2011</inceptionYear>
+
+    <organization>
+        <name>Institut Pasteur</name>
+        <url>https://pasteur.fr</url>
+    </organization>
+
+    <licenses>
+        <license>
+            <name>GNU GPLv3</name>
+            <url>https://www.gnu.org/licenses/gpl-3.0.en.html</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+	
+    <!-- List of project's dependencies -->
+    <dependencies>
+        <dependency>
+            <groupId>org.bioimageanalysis.icy</groupId>
+            <artifactId>jfreechart</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.bioimageanalysis.icy</groupId>
+            <artifactId>spot-detection-utilities</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.bioimageanalysis.icy</groupId>
+            <artifactId>track-manager</artifactId>
+        </dependency>
+    </dependencies>
+</project>
