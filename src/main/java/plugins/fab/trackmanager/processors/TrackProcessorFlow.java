@@ -18,18 +18,17 @@
 
 package plugins.fab.trackmanager.processors;
 
-import org.bioimageanalysis.icy.Icy;
-import org.bioimageanalysis.icy.extension.plugin.annotation_.IcyPluginIcon;
-import org.bioimageanalysis.icy.extension.plugin.annotation_.IcyPluginName;
-import org.bioimageanalysis.icy.gui.canvas.IcyCanvas;
-import org.bioimageanalysis.icy.gui.dialog.MessageDialog;
-import org.bioimageanalysis.icy.gui.viewer.Viewer;
-import org.bioimageanalysis.icy.gui.viewer.ViewerEvent;
-import org.bioimageanalysis.icy.gui.viewer.ViewerListener;
-import org.bioimageanalysis.icy.model.overlay.Overlay;
-import org.bioimageanalysis.icy.model.sequence.Sequence;
-import org.bioimageanalysis.icy.model.sequence.SequenceEvent;
-import org.bioimageanalysis.icy.model.sequence.SequenceListener;
+import fr.icy.Icy;
+import fr.icy.extension.plugin.annotation_.IcyPluginName;
+import fr.icy.gui.canvas.IcyCanvas;
+import fr.icy.gui.dialog.MessageDialog;
+import fr.icy.gui.viewer.Viewer;
+import fr.icy.gui.viewer.ViewerEvent;
+import fr.icy.gui.viewer.ViewerListener;
+import fr.icy.model.overlay.Overlay;
+import fr.icy.model.sequence.Sequence;
+import fr.icy.model.sequence.SequenceEvent;
+import fr.icy.model.sequence.SequenceListener;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -57,7 +56,6 @@ import java.util.ArrayList;
  * WARNING: BETA Version
  */
 @IcyPluginName("Track Processor Flow")
-@IcyPluginIcon(path = "/plugins/fab/trackmanager/processors/track-processor-flow.png")
 public class TrackProcessorFlow extends PluginTrackManagerProcessor implements ActionListener, SequenceListener, ViewerListener {
     private final TrackProcessorFlowOverlay overlay = new TrackProcessorFlowOverlay();
 
@@ -340,7 +338,7 @@ public class TrackProcessorFlow extends PluginTrackManagerProcessor implements A
     public void actionPerformed(final ActionEvent e) {
         if (e.getSource() == useRoiAsBoundsForChartButton) {
             try {
-                final Shape shape = (Shape) trackPool.getDisplaySequence().getROIs().getFirst();
+                final Shape shape = (Shape) trackPool.getDisplaySequence().getROIs().get(0);
                 chartRectangleInSequence = (Rectangle2D) shape.getBounds2D().clone();
                 displayGraphInSequenceCheckBox.setEnabled(true);
             }
@@ -422,7 +420,7 @@ public class TrackProcessorFlow extends PluginTrackManagerProcessor implements A
             viewer.removeListener(this);
         }
         if (trackPool.getDisplaySequence() != null) {
-            trackPool.getDisplaySequence().getViewers().getFirst().addListener(this);
+            trackPool.getDisplaySequence().getViewers().get(0).addListener(this);
         }
     }
 
