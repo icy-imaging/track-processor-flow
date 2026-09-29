@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2010-2025. Institut Pasteur.
+ * Copyright (c) 2010-2026. Institut Pasteur.
  *
  * This file is part of Icy.
  * Icy is free software: you can redistribute it and/or modify
@@ -343,7 +343,7 @@ public class TrackProcessorFlow extends PluginTrackManagerProcessor implements A
                 displayGraphInSequenceCheckBox.setEnabled(true);
             }
             catch (final Exception e1) {
-                MessageDialog.showDialog("No Sequence or No ROI to perform the operation.", MessageDialog.ERROR_MESSAGE);
+                MessageDialog.showDialog("No Sequence or No ROI to perform the operation.", JOptionPane.ERROR_MESSAGE);
             }
         }
 
